@@ -23,8 +23,8 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     User user;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     File file;
 }

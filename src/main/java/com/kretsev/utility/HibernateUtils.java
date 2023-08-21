@@ -35,4 +35,17 @@ public class HibernateUtils {
     public static Session getSession() {
         return getSessionFactory().openSession();
     }
+
+    public static String getUserGraph() {
+        return USER_GRAPH;
+    }
+
+    public static String getEventGraph() {
+        return EVENT_GRAPH;
+    }
+
+    public static String getFetchGraphPath() {
+        return FETCH_GRAPH_PATH;
+    }
+
 }
