@@ -6,7 +6,9 @@
 
     <groupId>com.kretsev</groupId>
     <artifactId>proselyte-http</artifactId>
+    <packaging>war</packaging>
     <version>0.0.1</version>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -19,9 +21,18 @@
         <junit-jupiter.version>5.9.3</junit-jupiter.version>
         <mockito.version>5.3.1</mockito.version>
         <h2.version>2.1.210</h2.version>
+        <javax.servlet.api.version>2.5</javax.servlet.api.version>
+        <tomcat.plugin.version>2.2</tomcat.plugin.version>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${javax.servlet.api.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.flywaydb</groupId>
@@ -94,6 +105,15 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>${tomcat.plugin.version}</version>
+                <configuration>
+                    <path>/</path>
+                    <port>8088</port>
+                </configuration>
             </plugin>
         </plugins>
     </build>
