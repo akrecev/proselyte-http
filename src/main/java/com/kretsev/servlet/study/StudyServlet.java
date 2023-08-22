@@ -1,4 +1,4 @@
-package com.kretsev.servlet;
+package com.kretsev.servlet.study;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +21,10 @@ public class StudyServlet extends HttpServlet {
         messageWriter.println("<h1>" + message + "</h1>");
     }
 
-    public void destroy() {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
 
+    public void destroy() {
     }
 }

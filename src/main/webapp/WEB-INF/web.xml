@@ -7,11 +7,15 @@
 
     <servlet>
         <servlet-name>StudyServlet</servlet-name>
-        <servlet-class>com.kretsev.servlet.StudyServlet</servlet-class>
+        <servlet-class>com.kretsev.servlet.study.StudyServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>StudyStatusCodeDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.StudyStatusCodeDemo</servlet-class>
+        <servlet-name>StatusCodeDemo</servlet-name>
+        <servlet-class>com.kretsev.servlet.study.StatusCodeDemo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletRequestDemo</servlet-name>
+        <servlet-class>com.kretsev.servlet.study.ServletRequestDemo</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -19,8 +23,12 @@
         <url-pattern>/StudyServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>StudyStatusCodeDemo</servlet-name>
-        <url-pattern>/StudyStatusCodeDemo</url-pattern>
+        <servlet-name>StatusCodeDemo</servlet-name>
+        <url-pattern>/StatusCodeDemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRequestDemo</servlet-name>
+        <url-pattern>/ServletRequestDemo</url-pattern>
     </servlet-mapping>
     
 </web-app>
