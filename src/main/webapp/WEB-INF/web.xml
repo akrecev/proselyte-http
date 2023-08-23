@@ -4,6 +4,16 @@
 
 <web-app>
     <display-name>HTTP Study project</display-name>
+    
+    <filter>
+        <filter-name>FilterDemo</filter-name>
+        <filter-class>com.kretsev.servlet.study.FilterDemo</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>FilterDemo</filter-name>
+        <url-pattern>/FilterDemo</url-pattern>
+    </filter-mapping>
 
     <servlet>
         <servlet-name>StudyServlet</servlet-name>
@@ -28,6 +38,10 @@
     <servlet>
         <servlet-name>PassingParametersUsingPostMethodDemo</servlet-name>
         <servlet-class>com.kretsev.servlet.study.PassingParametersUsingPostMethodDemo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ErrorDemo</servlet-name>
+        <servlet-class>com.kretsev.servlet.study.ErrorDemo</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -54,5 +68,18 @@
         <servlet-name>PassingParametersUsingPostMethodDemo</servlet-name>
         <url-pattern>/PassingParametersUsingPostMethodDemo</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ErrorDemo</servlet-name>
+        <url-pattern>/ErrorDemo</url-pattern>
+    </servlet-mapping>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/ErrorDemo</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Error</exception-type>
+        <location>/ErrorDemo</location>
+    </error-page>
     
 </web-app>
