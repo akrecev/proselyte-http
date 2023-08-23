@@ -15,7 +15,8 @@ public class PassingParametersUsingPostMethodDemo extends HttpServlet {
         String title = "Passing parameters using POST method demo";
         String docType = "<!DOCTYPE html>";
 
-        writer.println("<html>\n" +
+        writer.println(docType +
+                "<html>\n" +
                 "<head><title>" + title + "</title></head>\n" +
                 "<body>\n" +
                 "<h2>Specialty: </h2>" + request.getParameter("specialty") +

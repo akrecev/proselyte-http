@@ -15,7 +15,8 @@ public class PassingParametersUsingGetMethodDemo extends HttpServlet {
         String title = "Passing parameters using GET method";
         String docType = "<!DOCTYPE html>";
 
-        printWriter.println("<html>\n" +
+        printWriter.println(docType +
+                "<html>\n" +
                 "<head><title>" + title + "</head></title>\n" +
                 "<body>" +
                 "<h2>Specialty: </h2>" + request.getParameter("specialty") +
