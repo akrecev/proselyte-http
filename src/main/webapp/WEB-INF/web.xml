@@ -25,6 +25,10 @@
         <servlet-name>PassingParametersUsingGetMethodDemo</servlet-name>
         <servlet-class>com.kretsev.servlet.study.PassingParametersUsingGetMethodDemo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PassingParametersUsingPostMethodDemo</servlet-name>
+        <servlet-class>com.kretsev.servlet.study.PassingParametersUsingPostMethodDemo</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>StudyServlet</servlet-name>
@@ -45,6 +49,10 @@
     <servlet-mapping>
         <servlet-name>PassingParametersUsingGetMethodDemo</servlet-name>
         <url-pattern>/PassingParametersUsingGetMethodDemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PassingParametersUsingPostMethodDemo</servlet-name>
+        <url-pattern>/PassingParametersUsingPostMethodDemo</url-pattern>
     </servlet-mapping>
     
 </web-app>
