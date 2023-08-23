@@ -19,7 +19,8 @@ public class ServletRequestDemo extends HttpServlet {
         writer.println(contentType + "<html\n>" +
                 "<head><title>" + title + "</title><head>" +
                 "<body>" +
-                "<h1>HTTP Servlet Request Example </h1>"
+                "<h1>HTTP Servlet Request Example </h1>\n" +
+                "</html>"
         );
         Enumeration headers = request.getHeaderNames();
 
