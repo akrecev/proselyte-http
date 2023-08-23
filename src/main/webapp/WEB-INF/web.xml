@@ -17,6 +17,10 @@
         <servlet-name>ServletRequestDemo</servlet-name>
         <servlet-class>com.kretsev.servlet.study.ServletRequestDemo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletResponseDemo</servlet-name>
+        <servlet-class>com.kretsev.servlet.study.ServletResponseDemo</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>StudyServlet</servlet-name>
@@ -29,6 +33,10 @@
     <servlet-mapping>
         <servlet-name>ServletRequestDemo</servlet-name>
         <url-pattern>/ServletRequestDemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletResponseDemo</servlet-name>
+        <url-pattern>/ServletResponseDemo</url-pattern>
     </servlet-mapping>
     
 </web-app>
