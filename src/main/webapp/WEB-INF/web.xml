@@ -64,6 +64,14 @@
         <servlet-name>RedirectDemo</servlet-name>
         <servlet-class>com.kretsev.servlet.study.RedirectDemo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PageVisitsCounterDemo</servlet-name>
+        <servlet-class>com.kretsev.servlet.study.PageVisitsCounterDemo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LocaleDemo</servlet-name>
+        <servlet-class>com.kretsev.servlet.study.LocaleDemo</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>StudyServlet</servlet-name>
@@ -112,6 +120,14 @@
     <servlet-mapping>
         <servlet-name>RedirectDemo</servlet-name>
         <url-pattern>/RedirectDemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PageVisitsCounterDemo</servlet-name>
+        <url-pattern>/PageVisitsCounterDemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LocaleDemo</servlet-name>
+        <url-pattern>/LocaleDemo</url-pattern>
     </servlet-mapping>
 
     <error-page>
