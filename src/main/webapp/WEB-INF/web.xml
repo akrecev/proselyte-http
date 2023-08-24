@@ -56,6 +56,10 @@
         <servlet-name>DatabaseDemo</servlet-name>
         <servlet-class>com.kretsev.servlet.study.DatabaseDemo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AutoRefreshDemo</servlet-name>
+        <servlet-class>com.kretsev.servlet.study.AutoRefreshDemo</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>StudyServlet</servlet-name>
@@ -96,6 +100,10 @@
     <servlet-mapping>
         <servlet-name>DatabaseDemo</servlet-name>
         <url-pattern>/DatabaseDemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AutoRefreshDemo</servlet-name>
+        <url-pattern>/AutoRefreshDemo</url-pattern>
     </servlet-mapping>
 
     <error-page>
