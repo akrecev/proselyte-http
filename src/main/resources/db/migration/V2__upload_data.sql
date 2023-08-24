@@ -1,8 +1,8 @@
 INSERT INTO users (name)
-VALUES ('John Doe'),
+VALUES ('Santa Claus'),
        ('John Silver'),
-       ('John Smith'),
-       ('John Bloody Egg');
+       ('Frodo Baggins'),
+       ('Chingachgook');
 
 INSERT INTO files (name, file_path)
 VALUES ('spring.java', 'C:\Java'),

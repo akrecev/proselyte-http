@@ -3,6 +3,7 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+
     <display-name>HTTP Study project</display-name>
     
     <filter>
@@ -51,6 +52,10 @@
         <servlet-name>CookieDemo</servlet-name>
         <servlet-class>com.kretsev.servlet.study.CookieDemo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DatabaseDemo</servlet-name>
+        <servlet-class>com.kretsev.servlet.study.DatabaseDemo</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>StudyServlet</servlet-name>
@@ -87,6 +92,10 @@
     <servlet-mapping>
         <servlet-name>CookieDemo</servlet-name>
         <url-pattern>/CookieDemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DatabaseDemo</servlet-name>
+        <url-pattern>/DatabaseDemo</url-pattern>
     </servlet-mapping>
 
     <error-page>
