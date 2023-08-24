@@ -60,6 +60,10 @@
         <servlet-name>AutoRefreshDemo</servlet-name>
         <servlet-class>com.kretsev.servlet.study.AutoRefreshDemo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RedirectDemo</servlet-name>
+        <servlet-class>com.kretsev.servlet.study.RedirectDemo</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>StudyServlet</servlet-name>
@@ -104,6 +108,10 @@
     <servlet-mapping>
         <servlet-name>AutoRefreshDemo</servlet-name>
         <url-pattern>/AutoRefreshDemo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RedirectDemo</servlet-name>
+        <url-pattern>/RedirectDemo</url-pattern>
     </servlet-mapping>
 
     <error-page>
