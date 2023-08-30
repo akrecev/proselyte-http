@@ -6,137 +6,22 @@
 
     <display-name>HTTP Study project</display-name>
     
-    <filter>
-        <filter-name>FilterDemo</filter-name>
-        <filter-class>com.kretsev.servlet.study.FilterDemo</filter-class>
-    </filter>
 
-    <filter-mapping>
-        <filter-name>FilterDemo</filter-name>
-        <url-pattern>/FilterDemo</url-pattern>
-    </filter-mapping>
 
     <servlet>
-        <servlet-name>StudyServlet</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.StudyServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>StatusCodeDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.StatusCodeDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ServletRequestDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.ServletRequestDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ServletResponseDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.ServletResponseDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PassingParametersUsingGetMethodDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.PassingParametersUsingGetMethodDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PassingParametersUsingPostMethodDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.PassingParametersUsingPostMethodDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ErrorDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.ErrorDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>SessionTrackingDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.SessionTrackingDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CookieDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.CookieDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DatabaseDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.DatabaseDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AutoRefreshDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.AutoRefreshDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RedirectDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.RedirectDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PageVisitsCounterDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.PageVisitsCounterDemo</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>LocaleDemo</servlet-name>
-        <servlet-class>com.kretsev.servlet.study.LocaleDemo</servlet-class>
+        <servlet-name>CreateUser</servlet-name>
+        <servlet-class>com.kretsev.servlet.user.CreateUser</servlet-class>
     </servlet>
 
+
+
+
+
     <servlet-mapping>
-        <servlet-name>StudyServlet</servlet-name>
-        <url-pattern>/StudyServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>StatusCodeDemo</servlet-name>
-        <url-pattern>/StatusCodeDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletRequestDemo</servlet-name>
-        <url-pattern>/ServletRequestDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ServletResponseDemo</servlet-name>
-        <url-pattern>/ServletResponseDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PassingParametersUsingGetMethodDemo</servlet-name>
-        <url-pattern>/PassingParametersUsingGetMethodDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PassingParametersUsingPostMethodDemo</servlet-name>
-        <url-pattern>/PassingParametersUsingPostMethodDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ErrorDemo</servlet-name>
-        <url-pattern>/ErrorDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SessionTrackingDemo</servlet-name>
-        <url-pattern>/SessionTrackingDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CookieDemo</servlet-name>
-        <url-pattern>/CookieDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DatabaseDemo</servlet-name>
-        <url-pattern>/DatabaseDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AutoRefreshDemo</servlet-name>
-        <url-pattern>/AutoRefreshDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RedirectDemo</servlet-name>
-        <url-pattern>/RedirectDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PageVisitsCounterDemo</servlet-name>
-        <url-pattern>/PageVisitsCounterDemo</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LocaleDemo</servlet-name>
-        <url-pattern>/LocaleDemo</url-pattern>
+        <servlet-name>CreateUser</servlet-name>
+        <url-pattern>/create_user</url-pattern>
     </servlet-mapping>
 
-    <error-page>
-        <error-code>404</error-code>
-        <location>/ErrorDemo</location>
-    </error-page>
-    <error-page>
-        <exception-type>java.lang.Error</exception-type>
-        <location>/ErrorDemo</location>
-    </error-page>
+
     
 </web-app>
