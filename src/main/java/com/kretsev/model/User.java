@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor
@@ -29,4 +30,15 @@ public class User {
     String name;
     @OneToMany(mappedBy = "user")
     List<Event> events = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        List<Integer> eventsId = events == null ? null : events.stream().map(Event::getId).collect(Collectors.toList());
+
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", events id:" + eventsId +
+                '}';
+    }
 }

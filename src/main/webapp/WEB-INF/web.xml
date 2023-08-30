@@ -5,23 +5,26 @@
 <web-app>
 
     <display-name>HTTP Study project</display-name>
-    
 
 
     <servlet>
         <servlet-name>CreateUser</servlet-name>
         <servlet-class>com.kretsev.servlet.user.CreateUser</servlet-class>
     </servlet>
-
-
-
+    <servlet>
+        <servlet-name>GetUser</servlet-name>
+        <servlet-class>com.kretsev.servlet.user.GetUser</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
         <servlet-name>CreateUser</servlet-name>
         <url-pattern>/create_user</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetUser</servlet-name>
+        <url-pattern>/get_user</url-pattern>
+    </servlet-mapping>
 
 
-    
 </web-app>
