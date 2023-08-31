@@ -38,7 +38,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", events id:" + eventsId +
+                ", events id list:" + eventsId +
                 '}';
     }
 }
