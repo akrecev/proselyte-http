@@ -19,8 +19,8 @@ CREATE TABLE IF NOT EXISTS events
     user_id INTEGER,
     file_id INTEGER,
     CONSTRAINT pk_events PRIMARY KEY (id),
-    CONSTRAINT users_events_fk FOREIGN KEY (user_id) REFERENCES users,
-    CONSTRAINT files_events_fk FOREIGN KEY (file_id) REFERENCES files
+    CONSTRAINT users_events_fk FOREIGN KEY (user_id) REFERENCES users ON DELETE CASCADE,
+    CONSTRAINT files_events_fk FOREIGN KEY (file_id) REFERENCES files ON DELETE CASCADE
 );
 
 

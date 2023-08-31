@@ -23,6 +23,31 @@
         <servlet-name>UpdateUser</servlet-name>
         <servlet-class>com.kretsev.servlet.user.UpdateUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>com.kretsev.servlet.user.DeleteUser</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CreateFile</servlet-name>
+        <servlet-class>com.kretsev.servlet.file.CreateFile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetFile</servlet-name>
+        <servlet-class>com.kretsev.servlet.file.GetFile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetAllFiles</servlet-name>
+        <servlet-class>com.kretsev.servlet.file.GetAllFiles</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateFile</servlet-name>
+        <servlet-class>com.kretsev.servlet.file.UpdateFile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteFile</servlet-name>
+        <servlet-class>com.kretsev.servlet.file.DeleteFile</servlet-class>
+    </servlet>
 
 
     <servlet-mapping>
@@ -37,9 +62,34 @@
         <servlet-name>GetAllUsers</servlet-name>
         <url-pattern>/get_all_users</url-pattern>
     </servlet-mapping>
- <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>UpdateUser</servlet-name>
         <url-pattern>/update_user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/delete_user</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CreateFile</servlet-name>
+        <url-pattern>/create_file</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetFile</servlet-name>
+        <url-pattern>/get_file</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetAllFiles</servlet-name>
+        <url-pattern>/get_all_files</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateFile</servlet-name>
+        <url-pattern>/update_file</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteFile</servlet-name>
+        <url-pattern>/delete_file</url-pattern>
     </servlet-mapping>
 
 
