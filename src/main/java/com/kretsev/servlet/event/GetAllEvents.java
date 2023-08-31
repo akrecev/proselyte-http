@@ -1,7 +1,6 @@
 package com.kretsev.servlet.event;
 
 import com.kretsev.model.Event;
-import com.kretsev.model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +11,6 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import static com.kretsev.context.ApplicationContext.getEventService;
-import static com.kretsev.context.ApplicationContext.getUserService;
 
 public class GetAllEvents extends HttpServlet {
     private final static String CONTENT_TYPE = "text/html";
