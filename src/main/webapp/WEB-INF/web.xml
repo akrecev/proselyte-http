@@ -3,9 +3,7 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-
     <display-name>HTTP Study project</display-name>
-
 
     <servlet>
         <servlet-name>CreateUser</servlet-name>
@@ -49,6 +47,16 @@
         <servlet-class>com.kretsev.servlet.file.DeleteFile</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>CreateEvent</servlet-name>
+        <servlet-class>com.kretsev.servlet.event.CreateEvent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetEvent</servlet-name>
+        <servlet-class>com.kretsev.servlet.event.GetEvent</servlet-class>
+    </servlet>
+
+
 
     <servlet-mapping>
         <servlet-name>CreateUser</servlet-name>
@@ -90,6 +98,15 @@
     <servlet-mapping>
         <servlet-name>DeleteFile</servlet-name>
         <url-pattern>/delete_file</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CreateEvent</servlet-name>
+        <url-pattern>/create_event</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetEvent</servlet-name>
+        <url-pattern>/get_event</url-pattern>
     </servlet-mapping>
 
 
