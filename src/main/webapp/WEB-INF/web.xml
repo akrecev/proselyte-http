@@ -63,6 +63,10 @@
         <servlet-name>UpdateEvent</servlet-name>
         <servlet-class>com.kretsev.servlet.event.UpdateEvent</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteEvent</servlet-name>
+        <servlet-class>com.kretsev.servlet.event.DeleteEvent</servlet-class>
+    </servlet>
 
 
 
@@ -123,6 +127,10 @@
     <servlet-mapping>
         <servlet-name>UpdateEvent</servlet-name>
         <url-pattern>/update_event</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteEvent</servlet-name>
+        <url-pattern>/delete_event</url-pattern>
     </servlet-mapping>
 
 
