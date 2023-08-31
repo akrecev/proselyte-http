@@ -55,6 +55,14 @@
         <servlet-name>GetEvent</servlet-name>
         <servlet-class>com.kretsev.servlet.event.GetEvent</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetAllEvents</servlet-name>
+        <servlet-class>com.kretsev.servlet.event.GetAllEvents</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateEvent</servlet-name>
+        <servlet-class>com.kretsev.servlet.event.UpdateEvent</servlet-class>
+    </servlet>
 
 
 
@@ -107,6 +115,14 @@
     <servlet-mapping>
         <servlet-name>GetEvent</servlet-name>
         <url-pattern>/get_event</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetAllEvents</servlet-name>
+        <url-pattern>/get_all_events</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateEvent</servlet-name>
+        <url-pattern>/update_event</url-pattern>
     </servlet-mapping>
 
 

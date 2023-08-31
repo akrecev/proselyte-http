@@ -1,5 +1,7 @@
-package com.kretsev.servlet.user;
+package com.kretsev.servlet.event;
 
+import com.kretsev.model.Event;
+import com.kretsev.model.File;
 import com.kretsev.model.User;
 
 import javax.servlet.ServletException;
@@ -9,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import static com.kretsev.context.ApplicationContext.getUserService;
+import static com.kretsev.context.ApplicationContext.*;
 
-public class UpdateUser extends HttpServlet {
+public class UpdateEvent extends HttpServlet {
     private final static String CONTENT_TYPE = "text/html";
     private final static String DOC_TYPE = "<!DOCTYPE html>";
-    private final static String TITLE = "Update User";
+    private final static String TITLE = "Update Event";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -39,15 +41,20 @@ public class UpdateUser extends HttpServlet {
         resp.setContentType(CONTENT_TYPE);
         PrintWriter writer = resp.getWriter();
 
-        Integer userId = Integer.parseInt(req.getParameter("id")) ;
-        String userName = req.getParameter("name");
-        User user = User.builder().id(userId).name(userName).build();
-        user = getUserService().update(user);
-        user = getUserService().getById(user.getId());
+        Integer eventId = Integer.parseInt(req.getParameter("eventId"));
+
+        Integer userId = Integer.parseInt(req.getParameter("userId"));
+        User user = getUserService().getById(userId);
+
+        Integer fileId = Integer.parseInt(req.getParameter("fileId"));
+        File file = getFileService().getById(fileId);
+
+
+        Event event = Event.builder().id(eventId).user(user).file(file).build();
+        event = getEventService().update(event);
+        event = getEventService().getById(event.getId());
         //TODO при вызове .update без .getById не подгружается список ивентов
-        // (session.merge(user) в HibernateUserRepositoryImpl не загружает вложенные сущности из БД)
-        // так же непонятно почему при обновлении юзера с последним id из БД +1 создается новый юзер,
-        // при id +2 и более - 500 NOT FOUND
+        // (session.merge(user) в HibernateEventRepositoryImpl не загружает вложенные сущности из БД)
 
         writer.println(DOC_TYPE + "\n" +
                 "<html>\n" +
@@ -55,7 +62,7 @@ public class UpdateUser extends HttpServlet {
                 "<title>" + TITLE + "</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "Successfully updating:\n" + user.toString() +
+                "Successfully updating:\n" + event.toString() +
                 "\n</body>" +
                 "\n</html>");
 
