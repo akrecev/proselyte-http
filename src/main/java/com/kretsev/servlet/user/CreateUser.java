@@ -50,7 +50,7 @@ public class CreateUser extends HttpServlet {
                 "<title>" + TITLE + "</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "Successfully creating user:\n" + user.toString() +
+                "Successfully creating:\n" + user.toString() +
                 "\n</body>" +
                 "\n</html>");
 

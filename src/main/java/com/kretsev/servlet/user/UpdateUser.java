@@ -53,7 +53,7 @@ public class UpdateUser extends HttpServlet {
                 "<title>" + TITLE + "</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "Successfully updating user:\n" + user.toString() +
+                "Successfully updating:\n" + user.toString() +
                 "\n</body>" +
                 "\n</html>");
 

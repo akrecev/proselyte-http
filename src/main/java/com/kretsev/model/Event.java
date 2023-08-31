@@ -27,4 +27,13 @@ public class Event {
     User user;
     @ManyToOne(fetch = FetchType.LAZY)
     File file;
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", user=User(id=" + user.getId() + ", name=" + user.getName() +
+                "), file=" + file +
+                '}';
+    }
 }

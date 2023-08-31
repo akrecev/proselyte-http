@@ -50,7 +50,7 @@ public class CreateFile extends HttpServlet {
                 "<title>" + TITLE + "</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "Successfully creating file:\n" + file.toString() +
+                "Successfully creating:\n" + file.toString() +
                 "\n</body>" +
                 "\n</html>");
 

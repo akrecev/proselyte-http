@@ -56,7 +56,7 @@ public class UpdateFile extends HttpServlet {
                 "<title>" + TITLE + "</title>\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "Successfully updating file:\n" + file.toString() +
+                "Successfully updating:\n" + file.toString() +
                 "\n</body>" +
                 "\n</html>");
 
