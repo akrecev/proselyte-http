@@ -14,50 +14,49 @@ import static com.kretsev.utility.HibernateUtils.getSession;
 public class HibernateFileRepositoryImpl implements FileRepository {
     @Override
     public File save(File file) {
-        Session session = getSession();
-        Transaction transaction = session.beginTransaction();
-        session.persist(file);
-        transaction.commit();
-        session.close();
+        try (Session session = getSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.persist(file);
+            transaction.commit();
 
-        return file;
+            return file;
+        }
     }
 
     @Override
     public Optional<File> findById(Integer id) {
-        Session session = getSession();
-        File file = session.get(File.class, id);
-        session.close();
+        try (Session session = getSession()) {
+            File file = session.get(File.class, id);
 
-        return Optional.ofNullable(file);
+            return Optional.ofNullable(file);
+        }
     }
 
     @Override
     public List<File> findAll() {
-        Session session = getSession();
-        List<File> files = session.createQuery("FROM File", File.class).list();
-        session.close();
-
-        return files;
+        try (Session session = getSession()) {
+            return session.createQuery("FROM File", File.class).list();
+        }
     }
 
     @Override
     public File update(File file) {
-        Session session = getSession();
-        Transaction transaction = session.beginTransaction();
-        session.merge(file);
-        transaction.commit();
+        try (Session session = getSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.merge(file);
+            transaction.commit();
 
-        return file;
+            return file;
+        }
     }
 
     @Override
     public void delete(Integer id) {
-        File deletedFile = findById(id).orElseThrow(() -> new DataNotFoundException("File id=" + id + " not found!"));
-        Session session = getSession();
-        Transaction transaction = session.beginTransaction();
-        session.remove(deletedFile);
-        transaction.commit();
-        session.close();
+        try (Session session = getSession()) {
+            File deletedFile = findById(id).orElseThrow(() -> new DataNotFoundException("File id=" + id + " not found!"));
+            Transaction transaction = session.beginTransaction();
+            session.remove(deletedFile);
+            transaction.commit();
+        }
     }
 }
