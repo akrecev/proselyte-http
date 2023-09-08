@@ -1,5 +1,6 @@
 package com.kretsev.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,7 +8,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Data
@@ -29,16 +32,7 @@ public class User {
     @Column(nullable = false, length = 50)
     String name;
     @OneToMany(mappedBy = "user")
-    List<Event> events = new ArrayList<>();
+    @JsonManagedReference
+    Set<Event> events = new HashSet<>();
 
-    @Override
-    public String toString() {
-        List<Integer> eventsId = events == null ? null : events.stream().map(Event::getId).collect(Collectors.toList());
-
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", events id list:" + eventsId +
-                '}';
-    }
 }

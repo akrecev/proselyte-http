@@ -71,6 +71,10 @@
         <servlet-name>FileRestControllerV1</servlet-name>
         <servlet-class>com.kretsev.controller.FileRestControllerV1</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserRestControllerV1</servlet-name>
+        <servlet-class>com.kretsev.controller.UserRestControllerV1</servlet-class>
+    </servlet>
 
 
 
@@ -139,6 +143,10 @@
     <servlet-mapping>
         <servlet-name>FileRestControllerV1</servlet-name>
         <url-pattern>/api/v1/files</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserRestControllerV1</servlet-name>
+        <url-pattern>/api/v1/users</url-pattern>
     </servlet-mapping>
 
 
