@@ -75,6 +75,10 @@
         <servlet-name>UserRestControllerV1</servlet-name>
         <servlet-class>com.kretsev.controller.UserRestControllerV1</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EventRestControllerV1</servlet-name>
+        <servlet-class>com.kretsev.controller.EventRestControllerV1</servlet-class>
+    </servlet>
 
 
 
@@ -147,6 +151,10 @@
     <servlet-mapping>
         <servlet-name>UserRestControllerV1</servlet-name>
         <url-pattern>/api/v1/users</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EventRestControllerV1</servlet-name>
+        <url-pattern>/api/v1/events</url-pattern>
     </servlet-mapping>
 
 
