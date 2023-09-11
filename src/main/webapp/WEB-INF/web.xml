@@ -6,68 +6,6 @@
     <display-name>HTTP Study project</display-name>
 
     <servlet>
-        <servlet-name>CreateUser</servlet-name>
-        <servlet-class>com.kretsev.servlet.user.CreateUser</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetUser</servlet-name>
-        <servlet-class>com.kretsev.servlet.user.GetUser</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetAllUsers</servlet-name>
-        <servlet-class>com.kretsev.servlet.user.GetAllUsers</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UpdateUser</servlet-name>
-        <servlet-class>com.kretsev.servlet.user.UpdateUser</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DeleteUser</servlet-name>
-        <servlet-class>com.kretsev.servlet.user.DeleteUser</servlet-class>
-    </servlet>
-
-    <servlet>
-        <servlet-name>CreateFile</servlet-name>
-        <servlet-class>com.kretsev.servlet.file.CreateFile</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetFile</servlet-name>
-        <servlet-class>com.kretsev.servlet.file.GetFile</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetAllFiles</servlet-name>
-        <servlet-class>com.kretsev.servlet.file.GetAllFiles</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UpdateFile</servlet-name>
-        <servlet-class>com.kretsev.servlet.file.UpdateFile</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DeleteFile</servlet-name>
-        <servlet-class>com.kretsev.servlet.file.DeleteFile</servlet-class>
-    </servlet>
-
-    <servlet>
-        <servlet-name>CreateEvent</servlet-name>
-        <servlet-class>com.kretsev.servlet.event.CreateEvent</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetEvent</servlet-name>
-        <servlet-class>com.kretsev.servlet.event.GetEvent</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetAllEvents</servlet-name>
-        <servlet-class>com.kretsev.servlet.event.GetAllEvents</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UpdateEvent</servlet-name>
-        <servlet-class>com.kretsev.servlet.event.UpdateEvent</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DeleteEvent</servlet-name>
-        <servlet-class>com.kretsev.servlet.event.DeleteEvent</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>FileRestControllerV1</servlet-name>
         <servlet-class>com.kretsev.controller.FileRestControllerV1</servlet-class>
     </servlet>
@@ -80,70 +18,6 @@
         <servlet-class>com.kretsev.controller.EventRestControllerV1</servlet-class>
     </servlet>
 
-
-
-    <servlet-mapping>
-        <servlet-name>CreateUser</servlet-name>
-        <url-pattern>/create_user</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetUser</servlet-name>
-        <url-pattern>/get_user</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetAllUsers</servlet-name>
-        <url-pattern>/get_all_users</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UpdateUser</servlet-name>
-        <url-pattern>/update_user</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteUser</servlet-name>
-        <url-pattern>/delete_user</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>CreateFile</servlet-name>
-        <url-pattern>/create_file</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetFile</servlet-name>
-        <url-pattern>/get_file</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetAllFiles</servlet-name>
-        <url-pattern>/get_all_files</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UpdateFile</servlet-name>
-        <url-pattern>/update_file</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteFile</servlet-name>
-        <url-pattern>/delete_file</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>CreateEvent</servlet-name>
-        <url-pattern>/create_event</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetEvent</servlet-name>
-        <url-pattern>/get_event</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetAllEvents</servlet-name>
-        <url-pattern>/get_all_events</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UpdateEvent</servlet-name>
-        <url-pattern>/update_event</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteEvent</servlet-name>
-        <url-pattern>/delete_event</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>FileRestControllerV1</servlet-name>
         <url-pattern>/api/v1/files</url-pattern>
@@ -156,6 +30,5 @@
         <servlet-name>EventRestControllerV1</servlet-name>
         <url-pattern>/api/v1/events</url-pattern>
     </servlet-mapping>
-
 
 </web-app>
