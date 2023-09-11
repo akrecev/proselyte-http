@@ -1,6 +1,6 @@
 package com.kretsev.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.google.gson.annotations.Expose;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,11 +23,13 @@ import lombok.NoArgsConstructor;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Expose
     Integer id;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonBackReference
+    @Expose
     User user;
     @ManyToOne(fetch = FetchType.LAZY)
+    @Expose
     File file;
 
 }

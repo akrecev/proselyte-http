@@ -1,17 +1,14 @@
 package com.kretsev.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.google.gson.annotations.Expose;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor
@@ -28,11 +25,12 @@ import java.util.stream.Collectors;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Expose
     Integer id;
     @Column(nullable = false, length = 50)
+    @Expose
     String name;
     @OneToMany(mappedBy = "user")
-    @JsonManagedReference
     Set<Event> events = new HashSet<>();
 
 }
