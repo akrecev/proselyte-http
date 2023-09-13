@@ -13,13 +13,13 @@ import java.util.stream.Collectors;
 
 import static com.kretsev.context.ApplicationContext.getUserService;
 import static com.kretsev.utility.GsonUtils.getGSON;
-import static com.kretsev.utility.GsonUtils.getJsonContentType;
+import static com.kretsev.utility.GsonUtils.getApplicationJson;
 
 public class UserRestControllerV1 extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType(getJsonContentType());
+        resp.setContentType(getApplicationJson());
         PrintWriter writer = resp.getWriter();
         String jsonResult;
         String parameter = req.getParameter("id");
@@ -38,7 +38,7 @@ public class UserRestControllerV1 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType(getJsonContentType());
+        resp.setContentType(getApplicationJson());
         PrintWriter writer = resp.getWriter();
         String requestBody = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
         User user = getGSON().fromJson(requestBody, User.class);
@@ -50,7 +50,7 @@ public class UserRestControllerV1 extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType(getJsonContentType());
+        resp.setContentType(getApplicationJson());
         PrintWriter writer = resp.getWriter();
         String requestBody = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
         User user = getGSON().fromJson(requestBody, User.class);
@@ -62,7 +62,7 @@ public class UserRestControllerV1 extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType(getJsonContentType());
+        resp.setContentType(getApplicationJson());
         Integer fileId = Integer.parseInt(req.getParameter("id"));
         getUserService().deleteById(fileId);
     }

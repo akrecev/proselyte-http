@@ -16,19 +16,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.kretsev.context.ApplicationContext.getFileService;
-import static com.kretsev.utility.GsonUtils.getGSON;
-import static com.kretsev.utility.GsonUtils.getJsonContentType;
+import static com.kretsev.utility.GsonUtils.*;
 
 public class FileRestControllerV1 extends HttpServlet {
     private static final int FILE_MAX_SIZE = 1024 * 1024;
     private static final int MEM_MAX_SIZE = 1024 * 1024;
-    private String filePath = "D:\\kretsev\\study\\dev\\proselyte\\2.4\\proselyte-http\\src\\main\\resources\\upload";
+    private final String filePath = "D:\\kretsev\\study\\dev\\proselyte\\2.4\\proselyte-http\\src\\main\\resources\\upload";
     private java.io.File file;
 
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType(getJsonContentType());
+        resp.setContentType(getApplicationJson());
         PrintWriter writer = resp.getWriter();
         String jsonResult;
         String parameter = req.getParameter("id");
@@ -47,7 +46,7 @@ public class FileRestControllerV1 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType(getJsonContentType());
+        resp.setContentType(getTextHtml());
         PrintWriter writer = resp.getWriter();
 
         DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
@@ -56,7 +55,6 @@ public class FileRestControllerV1 extends HttpServlet {
 
         ServletFileUpload upload = new ServletFileUpload(diskFileItemFactory);
         upload.setSizeMax(FILE_MAX_SIZE);
-
 
         try {
             List fileItems = upload.parseRequest(req);
@@ -78,9 +76,6 @@ public class FileRestControllerV1 extends HttpServlet {
                     writer.println(fileName + " is uploaded.<br>");
                 }
             }
-            writer.println("</body>" +
-                    "</html>");
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,7 +83,7 @@ public class FileRestControllerV1 extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType(getJsonContentType());
+        resp.setContentType(getApplicationJson());
         PrintWriter writer = resp.getWriter();
         String requestBody = req.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
         File file = getGSON().fromJson(requestBody, File.class);
@@ -100,7 +95,7 @@ public class FileRestControllerV1 extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType(getJsonContentType());
+        resp.setContentType(getApplicationJson());
         Integer fileId = Integer.parseInt(req.getParameter("id"));
         getFileService().deleteById(fileId);
     }

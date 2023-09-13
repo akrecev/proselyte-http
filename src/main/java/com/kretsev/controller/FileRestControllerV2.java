@@ -11,15 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static com.kretsev.utility.GsonUtils.getMultipartFormData;
+
 public class FileRestControllerV2 extends HttpServlet {
     private static final int MEM_MAX_SIZE = 1024 * 1024;
     private static final int FILE_MAX_SIZE = 1024 * 1024 * 5;
     private static final int MAX_REQUEST_SIZE = 1024 * 1024 * 5 * 5;
     private static final String UPLOAD_DIRECTORY = "upload";
-    private String filePath = "src\\main\\resources\\upload";
+    private final String filePath = "src\\main\\resources\\upload";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String contentType = req.getContentType();
+
         if (ServletFileUpload.isMultipartContent(req)) {
             DiskFileItemFactory factory = new DiskFileItemFactory();
             factory.setSizeThreshold(MEM_MAX_SIZE);
