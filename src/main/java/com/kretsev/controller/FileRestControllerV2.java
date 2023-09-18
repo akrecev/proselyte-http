@@ -18,21 +18,21 @@ public class FileRestControllerV2 extends HttpServlet {
     private static final int FILE_MAX_SIZE = 1024 * 1024 * 5;
     private static final int MAX_REQUEST_SIZE = 1024 * 1024 * 5 * 5;
     private static final String UPLOAD_DIRECTORY = "upload";
-    private final String filePath = "src\\main\\resources\\upload";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String contentType = req.getContentType();
+        String uploadPath = getServletContext().getRealPath("").replaceAll("webapp", "resources") +
+                java.io.File.separator + UPLOAD_DIRECTORY +
+                java.io.File.separator;
 
         if (ServletFileUpload.isMultipartContent(req)) {
             DiskFileItemFactory factory = new DiskFileItemFactory();
             factory.setSizeThreshold(MEM_MAX_SIZE);
-            factory.setRepository(new java.io.File(filePath));
+            factory.setRepository(new java.io.File(uploadPath));
 
             ServletFileUpload upload = new ServletFileUpload(factory);
             upload.setFileSizeMax(FILE_MAX_SIZE);
             upload.setSizeMax(MAX_REQUEST_SIZE);
-            String uploadPath = getServletContext().getRealPath("") + java.io.File.separator + UPLOAD_DIRECTORY;
 
             try {
                 List<FileItem> formItems = upload.parseRequest(req);

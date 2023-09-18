@@ -21,7 +21,8 @@ import static com.kretsev.utility.GsonUtils.*;
 public class FileRestControllerV1 extends HttpServlet {
     private static final int FILE_MAX_SIZE = 1024 * 1024;
     private static final int MEM_MAX_SIZE = 1024 * 1024;
-    private final String filePath = "D:\\kretsev\\study\\dev\\proselyte\\2.4\\proselyte-http\\src\\main\\resources\\upload";
+    private static final String UPLOAD_DIRECTORY = "upload";
+
     private java.io.File file;
 
 
@@ -46,6 +47,8 @@ public class FileRestControllerV1 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String filePath = getServletContext().getRealPath("").replaceAll("webapp", "resources") +
+                java.io.File.separator + UPLOAD_DIRECTORY + java.io.File.separator;
         resp.setContentType(getTextHtml());
         PrintWriter writer = resp.getWriter();
 
