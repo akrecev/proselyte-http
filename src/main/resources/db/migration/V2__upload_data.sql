@@ -5,10 +5,10 @@ VALUES ('Santa Claus'),
        ('Chingachgook');
 
 INSERT INTO files (name, file_path)
-VALUES ('spring.java', 'C:\Java'),
-       ('hello world.doc', 'C:\Users'),
-       ('file.txt', 'C:\Users\Public\Documents'),
-       ('Treasure island', 'C:\Users\Public\Books');
+VALUES ('Treasure-island-map.jpg', 'D:/kretsev/study/dev/proselyte/2.4/proselyte-http/src/main/resources/upload/'),
+       ('Text.txt', 'D:/kretsev/study/dev/proselyte/2.4/proselyte-http/src/main/resources/upload/'),
+       ('Excel.xlsx', 'D:/kretsev/study/dev/proselyte/2.4/proselyte-http/src/main/resources/upload/'),
+       ('Word.docx', 'D:/kretsev/study/dev/proselyte/2.4/proselyte-http/src/main/resources/upload/');
 
 INSERT INTO events (user_id, file_id)
 VALUES (1, 1),

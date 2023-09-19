@@ -11,20 +11,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.kretsev.context.ApplicationContext.getFileService;
-import static com.kretsev.utility.GsonUtils.*;
+import static com.kretsev.utility.GsonUtils.getApplicationJson;
+import static com.kretsev.utility.GsonUtils.getGSON;
 
 public class FileRestControllerV1 extends HttpServlet {
     private static final int FILE_MAX_SIZE = 1024 * 1024;
     private static final int MEM_MAX_SIZE = 1024 * 1024;
     private static final String UPLOAD_DIRECTORY = "upload";
-
-    private java.io.File file;
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -47,40 +44,46 @@ public class FileRestControllerV1 extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String filePath = getServletContext().getRealPath("").replaceAll("webapp", "resources") +
+        String uploadPath = getServletContext().getRealPath("").replaceAll("webapp", "resources") +
                 java.io.File.separator + UPLOAD_DIRECTORY + java.io.File.separator;
-        resp.setContentType(getTextHtml());
-        PrintWriter writer = resp.getWriter();
+        String fileName = null;
 
-        DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
-        diskFileItemFactory.setRepository(new java.io.File(filePath));
-        diskFileItemFactory.setSizeThreshold(MEM_MAX_SIZE);
+        if (ServletFileUpload.isMultipartContent(req)) {
+            resp.setContentType(getApplicationJson());
+            PrintWriter writer = resp.getWriter();
 
-        ServletFileUpload upload = new ServletFileUpload(diskFileItemFactory);
-        upload.setSizeMax(FILE_MAX_SIZE);
+            DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
+            diskFileItemFactory.setRepository(new java.io.File(uploadPath));
+            diskFileItemFactory.setSizeThreshold(MEM_MAX_SIZE);
 
-        try {
-            List fileItems = upload.parseRequest(req);
-            Iterator iterator = fileItems.iterator();
+            ServletFileUpload upload = new ServletFileUpload(diskFileItemFactory);
+            upload.setSizeMax(FILE_MAX_SIZE);
 
-            while (iterator.hasNext()) {
-                FileItem fileItem = (FileItem) iterator.next();
-                if (!fileItem.isFormField()) {
-
-                    String fileName = fileItem.getName();
-                    if (fileName.lastIndexOf("\\") >= 0) {
-                        file = new java.io.File(filePath +
-                                fileName.substring(fileName.lastIndexOf("\\")));
-                    } else {
-                        file = new java.io.File(filePath +
-                                fileName.substring(fileName.lastIndexOf("\\") + 1));
+            try {
+                List<FileItem> formItems = upload.parseRequest(req);
+                if (formItems != null && formItems.size() > 0) {
+                    for (FileItem item : formItems) {
+                        if (!item.isFormField()) {
+                            fileName = new java.io.File(item.getName()).getName();
+                            String filePath = uploadPath + java.io.File.separator + fileName;
+                            java.io.File storeFile = new java.io.File(filePath);
+                            item.write(storeFile);
+                            req.setAttribute("message", "File " + fileName + " has uploaded successfully!");
+                        }
                     }
-                    fileItem.write(file);
-                    writer.println(fileName + " is uploaded.<br>");
                 }
+                File uploadedFile = File.builder()
+                        .name(fileName)
+                        .filePath(uploadPath.replace('\\', '/'))
+                        .build();
+                uploadedFile = getFileService().create(uploadedFile);
+
+                writer.println(getGSON().toJson(uploadedFile));
+                writer.flush();
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
